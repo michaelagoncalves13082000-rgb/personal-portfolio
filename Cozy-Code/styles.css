@@ -1,61 +1,17 @@
-body {
-  background-color: grey;
-}
-
-.laptop {
-  max-width: 100%;
-  max-height: 100%;
-  padding: 260px;
-  border: 8px solid lightgray;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 5);
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: antiquewhite;
+  background-color: grey;
 }
 
-.screen {
-  background-color: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-#welcome {
-  font-size: 92px;
-  font-family: "Jersey 10", sans-serif;
-  width: 0;
-  overflow: hidden;
-}
-
-:root {
-  --cursor-color: white;
-}
-
-.typing {
-  border-right: 3px solid var(--cursor-color);
-  animation: blinking 1s steps(1, end) infinite,
-  typing 3s steps(20, end) forwards;
-  width:0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-@keyframes blinking {
-  0% {border-color: transparent;}
-  50% {border-color: var(--cursor-color);}
-  100% {border-color: transparent;}
-}
-
-@keyframes typing {
-  0% {width: 0}
-  100% {width: 100%}
-}
-
-.typing-done {
-  border-right: none;
+body {
+  background-color: grey;
 }
 
 .audioControls {
@@ -65,6 +21,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  z-index: 1000;
 }
 
 #muteBtn {
@@ -79,11 +36,160 @@ body {
 #muteBtn:hover {
   transform: scale(1.1);
 }
+.laptop {
+  width: 100vw;
+  height: 100vh;
+  border: 8px solid lightgray;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: antiquewhite;
+  position:relative;
+  overflow: hidden;
+}
+
+.screen {
+  width: 100%;
+  text-align: center;
+}
+
+#welcome {
+  font-size: 92px;
+  font-family: "Jersey 10", sans-serif;
+  color: #fff;
+  width: 0;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+}
+
+#begin {
+  display: inline-block;
+  font-family: 'Jersey 10', sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid white;
+  animation: typing1 3s steps(14, end) forwards, blinking 1s step-end infinite;
+  width:0;
+}
+
+:root {
+  --cursor-color: white;
+}
+
+.typing1 {
+  display: inline-block;
+  border-right: 3px solid var(--cursor-color);
+  animation: blinking1 1s steps(1, end) infinite,
+            typing1 3s steps(14, end) forwards;
+  width:0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes blinking1 {
+  0% {border-color: transparent;}
+  50% {border-color: var(--cursor-color);}
+  100% {border-color: transparent;}
+}
+
+@keyframes typing1 {
+  0% {width: 0}
+  100% {width: 14ch;}
+}
+
+.typing2 {
+  display: inline-block;
+  border-right: 3px solid var(--cursor-color);
+  animation: blinking2 1s steps(1, end) infinite,
+            typing2 3s steps(25, end) forwards;
+  width:0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes blinking2 {
+  0% {border-color: transparent;}
+  50% {border-color: var(--cursor-color);}
+  100% {border-color: transparent;}
+}
+
+@keyframes typing2 {
+  0% {width: 0}
+  100% {width: 25ch;}
+}
+
+.typing-done {
+  border-right: none;
+}
 
 #begin {
   color: #fff;
   font-size: 92px;
-  font-family: "Jersey 10", sans-serif;
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+.hidden {
+  display:none;
+}
+
+#avatarScreen {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ background-image: url('assets/Meadow.png');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+
+.avatars {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 50px;
+}
+.avatars img {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.avatars img:hover {
+  transform: scale(1.2);
+}
+
+#chooseAvatar {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 80px;
+  margin: 20px;
+  color: black;
+}
+
+.choice {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 30px;
+}
+
+.choice label {
+  font-size: 52px;
+  color: black;
+  margin-top: 10px;
+  font-family: 'Jersey 10', sans-serif;
 }
