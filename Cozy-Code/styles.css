@@ -1,0 +1,89 @@
+body {
+  background-color: grey;
+}
+
+.laptop {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 260px;
+  border: 8px solid lightgray;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: antiquewhite;
+}
+
+.screen {
+  background-color: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#welcome {
+  font-size: 92px;
+  font-family: "Jersey 10", sans-serif;
+  width: 0;
+  overflow: hidden;
+}
+
+:root {
+  --cursor-color: white;
+}
+
+.typing {
+  border-right: 3px solid var(--cursor-color);
+  animation: blinking 1s steps(1, end) infinite,
+  typing 3s steps(20, end) forwards;
+  width:0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes blinking {
+  0% {border-color: transparent;}
+  50% {border-color: var(--cursor-color);}
+  100% {border-color: transparent;}
+}
+
+@keyframes typing {
+  0% {width: 0}
+  100% {width: 100%}
+}
+
+.typing-done {
+  border-right: none;
+}
+
+.audioControls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#muteBtn {
+  width: 40px;
+  height: 40px;
+  background-image: url('assets/high-volume.png');
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+}
+
+#muteBtn:hover {
+  transform: scale(1.1);
+}
+
+#begin {
+  color: #fff;
+  font-size: 92px;
+  font-family: "Jersey 10", sans-serif;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
